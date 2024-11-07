@@ -1,4 +1,4 @@
-# Smachar_app
+# Samachar App
 
 A New News App In Flutter.
 
