@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'package:smachara_app/view/home_screen.dart';
 import 'package:smachara_app/view_model/news_view_model.dart';
@@ -33,10 +34,48 @@ class _CategoryScreenState extends State<CategoryScreen> {
     final width = MediaQuery.sizeOf(context).width * 1;
     return Scaffold(
       appBar: AppBar(),
-      body: Column(
-        children: [
-          Container(),
-        ],
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          children: [
+            SizedBox(
+              height: 40,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: categoryList.length,
+                itemBuilder: ((context, index) {
+                  return InkWell(
+                    onTap: () {
+                      category = categoryList[index];
+                      setState(() {});
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.only(right: 12.0),
+                      child: Container(
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10.0),
+                            color: category == categoryList[index]
+                                ? Colors.blue
+                                : Colors.grey),
+                        child: Center(
+                          child: Padding(
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 12.0),
+                            child: Text(
+                              categoryList[index].toString(),
+                              style: GoogleFonts.poppins(
+                                  fontSize: 13, color: Colors.white),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  );
+                }),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
