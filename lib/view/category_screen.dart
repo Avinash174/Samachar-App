@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -122,6 +124,52 @@ class _CategoryScreenState extends State<CategoryScreen> {
                                   ),
                                 ),
                               ),
+                              Expanded(
+                                child: Container(
+                                  height: height * .18,
+                                  padding: const EdgeInsets.only(left: 15),
+                                  child: Column(
+                                    children: [
+                                      Text(
+                                        snapshot.data!.articles![index].title
+                                            .toString(),
+                                        maxLines: 3,
+                                        style: GoogleFonts.poppins(
+                                          fontSize: 15,
+                                          color: Colors.black54,
+                                          fontWeight: FontWeight.w700,
+                                        ),
+                                      ),
+                                      Spacer(),
+                                      Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Text(
+                                            snapshot.data!.articles![index]
+                                                .source!.name
+                                                .toString(),
+                                            maxLines: 3,
+                                            style: GoogleFonts.poppins(
+                                              fontSize: 14,
+                                              color: Colors.black54,
+                                              fontWeight: FontWeight.w600,
+                                            ),
+                                          ),
+                                          Text(
+                                            format.format(dataTime),
+                                            style: GoogleFonts.poppins(
+                                              fontSize: 15,
+                                              color: Colors.black54,
+                                              fontWeight: FontWeight.w500,
+                                            ),
+                                          ),
+                                        ],
+                                      )
+                                    ],
+                                  ),
+                                ),
+                              )
                             ],
                           ),
                         );
