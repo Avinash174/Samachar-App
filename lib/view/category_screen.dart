@@ -90,14 +90,41 @@ class _CategoryScreenState extends State<CategoryScreen> {
                     );
                   } else {
                     return ListView.builder(
-                      scrollDirection: Axis.horizontal,
+                      scrollDirection: Axis.vertical,
                       itemCount: snapshot.data!.articles!.length,
                       itemBuilder: (BuildContext context, int index) {
                         DateTime dataTime = DateTime.parse(
                           snapshot.data!.articles![index].publishedAt
                               .toString(),
                         );
-                        return Container();
+                        return Padding(
+                          padding: const EdgeInsets.only(bottom: 15, top: 15),
+                          child: Row(
+                            children: [
+                              ClipRRect(
+                                borderRadius: BorderRadius.circular(
+                                  15.0,
+                                ),
+                                child: CachedNetworkImage(
+                                  imageUrl: snapshot
+                                      .data!.articles![index].urlToImage
+                                      .toString(),
+                                  fit: BoxFit.cover,
+                                  height: height * .18,
+                                  width: width * .3,
+                                  placeholder: (context, url) => Container(
+                                    child: spinKit2,
+                                  ),
+                                  errorWidget: (context, url, error) =>
+                                      const Icon(
+                                    Icons.error_outline,
+                                    color: Colors.red,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        );
                       },
                     );
                   }
