@@ -119,7 +119,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                             .data!.articles![index].author
                                             .toString(),
                                         newsImage: snapshot
-                                            .data!.articles![index].publishedAt
+                                            .data!.articles![index].urlToImage
                                             .toString(),
                                         content: snapshot
                                             .data!.articles![index].content
@@ -134,7 +134,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                             .data!.articles![index].publishedAt
                                             .toString(),
                                         source: snapshot
-                                            .data!.articles![index].source
+                                            .data!.articles![index].source!.name
                                             .toString(),
                                       )));
                         },
