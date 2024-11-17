@@ -124,7 +124,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
                                   ),
                                 ),
                               ),
-                              Expanded(
+                              Flexible(
                                 child: Container(
                                   height: height * .18,
                                   padding: const EdgeInsets.only(left: 15),
@@ -133,7 +133,9 @@ class _CategoryScreenState extends State<CategoryScreen> {
                                       Text(
                                         snapshot.data!.articles![index].title
                                             .toString(),
+                                        textAlign: TextAlign.justify,
                                         maxLines: 3,
+                                        overflow: TextOverflow.clip,
                                         style: GoogleFonts.poppins(
                                           fontSize: 15,
                                           color: Colors.black54,
@@ -141,34 +143,33 @@ class _CategoryScreenState extends State<CategoryScreen> {
                                         ),
                                       ),
                                       const Spacer(),
-                                      const SizedBox(
-                                        height: 5,
-                                      ),
-                                      Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
-                                        children: [
-                                          Text(
-                                            snapshot.data!.articles![index]
-                                                .source!.name
-                                                .toString(),
-                                            maxLines: 3,
-                                            style: GoogleFonts.poppins(
-                                              fontSize: 12,
-                                              color: Colors.blueAccent,
-                                              fontWeight: FontWeight.w600,
+                                      Expanded(
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Text(
+                                              snapshot.data!.articles![index]
+                                                  .source!.name
+                                                  .toString(),
+                                              overflow: TextOverflow.ellipsis,
+                                              style: GoogleFonts.poppins(
+                                                fontSize: 12,
+                                                color: Colors.blueAccent,
+                                                fontWeight: FontWeight.w600,
+                                              ),
                                             ),
-                                          ),
-                                          Text(
-                                            format.format(dataTime),
-                                            overflow: TextOverflow.clip,
-                                            style: GoogleFonts.poppins(
-                                              fontSize: 13,
-                                              color: Colors.black54,
-                                              fontWeight: FontWeight.w500,
+                                            Text(
+                                              format.format(dataTime),
+                                              overflow: TextOverflow.clip,
+                                              style: GoogleFonts.poppins(
+                                                fontSize: 12,
+                                                color: Colors.black54,
+                                                fontWeight: FontWeight.w500,
+                                              ),
                                             ),
-                                          ),
-                                        ],
+                                          ],
+                                        ),
                                       )
                                     ],
                                   ),

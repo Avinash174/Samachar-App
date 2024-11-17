@@ -301,6 +301,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                       snapshot.data!.articles![index].title
                                           .toString(),
                                       maxLines: 3,
+                                      textAlign: TextAlign.justify,
                                       style: GoogleFonts.poppins(
                                         fontSize: 15,
                                         color: Colors.black54,
