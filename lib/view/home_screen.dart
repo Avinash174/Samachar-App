@@ -280,7 +280,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     .toString(),
                                 fit: BoxFit.cover,
                                 height: height * .18,
-                                width: width * .3,
+                                width: width * .25,
                                 placeholder: (context, url) => Container(
                                   child: spinKit2,
                                 ),
@@ -318,15 +318,15 @@ class _HomeScreenState extends State<HomeScreen> {
                                               .toString(),
                                           maxLines: 3,
                                           style: GoogleFonts.poppins(
-                                            fontSize: 14,
-                                            color: Colors.black54,
-                                            fontWeight: FontWeight.w600,
+                                            fontSize: 13,
+                                            color: Colors.blue,
+                                            fontWeight: FontWeight.bold,
                                           ),
                                         ),
                                         Text(
                                           format.format(dataTime),
                                           style: GoogleFonts.poppins(
-                                            fontSize: 15,
+                                            fontSize: 12,
                                             color: Colors.black54,
                                             fontWeight: FontWeight.w500,
                                           ),

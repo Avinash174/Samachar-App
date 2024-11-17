@@ -140,7 +140,10 @@ class _CategoryScreenState extends State<CategoryScreen> {
                                           fontWeight: FontWeight.w700,
                                         ),
                                       ),
-                                      Spacer(),
+                                      const Spacer(),
+                                      const SizedBox(
+                                        height: 5,
+                                      ),
                                       Row(
                                         mainAxisAlignment:
                                             MainAxisAlignment.spaceBetween,
@@ -151,15 +154,16 @@ class _CategoryScreenState extends State<CategoryScreen> {
                                                 .toString(),
                                             maxLines: 3,
                                             style: GoogleFonts.poppins(
-                                              fontSize: 14,
-                                              color: Colors.black54,
+                                              fontSize: 12,
+                                              color: Colors.blueAccent,
                                               fontWeight: FontWeight.w600,
                                             ),
                                           ),
                                           Text(
                                             format.format(dataTime),
+                                            overflow: TextOverflow.clip,
                                             style: GoogleFonts.poppins(
-                                              fontSize: 15,
+                                              fontSize: 13,
                                               color: Colors.black54,
                                               fontWeight: FontWeight.w500,
                                             ),

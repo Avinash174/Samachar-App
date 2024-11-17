@@ -91,16 +91,16 @@ class _NewDetailScreebState extends State<NewDetailScreeb> {
                       child: Text(
                         widget.source,
                         style: GoogleFonts.poppins(
-                          fontSize: 13,
-                          fontWeight: FontWeight.w600,
-                          color: Colors.black87,
+                          fontSize: 14,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.blue,
                         ),
                       ),
                     ),
                     Text(
                       format.format(dateTime),
                       style: GoogleFonts.poppins(
-                        fontSize: 12,
+                        fontSize: 13,
                         fontWeight: FontWeight.w500,
                         color: Colors.black87,
                       ),
