@@ -193,6 +193,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                                 .data!.articles![index].title
                                                 .toString(),
                                             maxLines: 3,
+                                            textAlign: TextAlign.justify,
                                             overflow: TextOverflow.ellipsis,
                                             style: GoogleFonts.poppins(
                                               fontSize: 17,
