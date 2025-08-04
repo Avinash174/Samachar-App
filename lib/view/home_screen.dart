@@ -201,8 +201,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                             ),
                                           ),
                                         ),
-                                        Spacer(),
-                                        Container(
+                                        const Spacer(),
+                                        SizedBox(
                                           width: width * 0.7,
                                           child: Row(
                                             mainAxisAlignment:
